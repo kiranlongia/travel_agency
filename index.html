@@ -5,6 +5,7 @@
         
         <link rel="stylesheet" type="text/css" href="css/layout.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="css/slide.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </head>
   <body>
@@ -36,6 +37,62 @@
   </div>
   <script src="javascript/navbar.js"></script>
     <!--Navbar end-->
+
+
+    <!-- Slideshow container -->
+	<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade">
+      
+      <img src="images/a.jpg" style="width:100%" height="600px">
+      <!--<div class="text">CN Tower</div>-->
+    </div>
+  
+    <div class="mySlides fade">
+      
+      <img src="images/b.jpg" style="width:100%" height="600px">
+      
+    </div>
+  
+    <div class="mySlides fade">
+      
+     <img src="images/c.jpg" style="width:100%" height="600px">
+      
+    </div>
+     <div class="mySlides fade">
+      
+     <img src="images/d.jpg" style="width:100%" height="600px">
+      
+    </div>
+    
+    <div class="mySlides fade">
+      
+     <img src="images/e.jpg" style="width:100%" height="600px">
+      
+    </div>
+  
+    <div class="mySlides fade">
+      
+     <img src="images/f.jpg" style="width:100%" height="600px" >
+      
+    </div>
+  
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+     <span class="dot" onclick="currentSlide(4)"></span> 
+     <span class="dot" onclick="currentSlide(5)"></span> 
+      <span class="dot" onclick="currentSlide(6)"></span> 
+  </div>
+
+  
+  <!--Slider end-->
 
     <div style="background-color:#f1f1f1;padding:15px;">
         <h1>Infinity Travel</h1>
@@ -81,4 +138,25 @@
       <!--Footer End-->
       
   </body>
+  <script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+           slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+    </script>
 </html>
