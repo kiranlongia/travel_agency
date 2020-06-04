@@ -4,10 +4,12 @@ body {font-family: Verdana, sans-serif; margin:0}
 img {vertical-align: middle;}
 
 /* Slideshow container */
-.slideshow-container {
+.slideshow {
   max-width: 100%;
   position: relative;
+  padding: 0px;
   margin: auto;
+  background-color: #f2f2f2;
 }
 
 /* Next & previous buttons */
