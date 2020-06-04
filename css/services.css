@@ -58,6 +58,35 @@
     padding: 10px;
     margin-top: 6px;
   }
+
+
+  .austria-container {
+    position: relative;
+    padding: 20px 0 30px 0;
+    margin: 20px;
+    border-radius: 15px;
+    height: 100%;
+    min-height: 450px;
+    background-color: rgba(226, 168, 203, 0.4);
+    } 
+  
+  /* Two-column layout */
+  .austria-col-left {
+    float: left;
+    width: 30%;
+    height: auto;
+    margin: auto;
+    padding-left: 10px;
+    
+  }
+  
+  .austria-col-right {
+    float: left;
+    width: 70%;
+    margin: auto;
+    padding: 0 50px;
+    margin-top: 6px;
+  }
   
   /* Clear floats after the columns */
   .row:after {
