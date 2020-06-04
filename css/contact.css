@@ -1,0 +1,30 @@
+.contact-row{
+    position: relative;
+    padding: 20px 0 30px 0;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.contact-address{
+    float: left;
+    width: 33.3%;
+    height: auto;
+    margin: auto;
+    padding-left: 10px;
+}
+
+.contact-phone{
+    float: left;
+    width: 33.3%;
+    height: auto;
+    margin: auto;
+    padding-left: 10px;
+}
+
+.contact-email{
+    float: left;
+    width: 33.3%;
+    height: auto;
+    margin: auto;
+    padding-left: 10px;
+}
