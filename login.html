@@ -5,6 +5,7 @@
         
         <link rel="stylesheet" type="text/css" href="css/layout.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </head>
   <body>
@@ -44,25 +45,70 @@
       
       <div style="overflow:auto">
         <div class="menu">
-          <div class="menuitem">The Walk</div>
-          <div class="menuitem">Transport</div>
-          <div class="menuitem">History</div>
-          <div class="menuitem">Gallery</div>
+            <div class="menuitem"><b>Top Rated Destinations</b></div>
+            <div class="menuitem"><a href="services.html#paris">Paris</a></div>
+            <div class="menuitem"><a href="services.html#new_york">New York</a></div>
+            <div class="menuitem"><a href="services.html#austria">Austria</a></div>
         </div>
       
         <div class="main">
-          <h2>The Infinity</h2>
-          <p>The walk from Monterosso to Riomaggiore will take you approximately two hours, give or take an hour depending on the weather conditions and your physical shape.</p>
-          <img src="images/logo.png" style="width:100%">
+
+            <div class="container">
+                
+                  <div class="row">
+                    <h2 style="text-align:center">Register or Login</h2>
+                    <div class="vl">
+                      
+                    </div>
+              
+                    <div class="col">
+                        <form action="">
+                        <input type="text" id="email" name="email" placeholder="Email" required>
+
+                        <input type="text" id="url" name="url" placeholder="Personal url" required>
+
+                        <input type="date" id="dob" name="dob" required>
+
+                        <group id="gender" class="inline-radio">
+                            <div style="margin-left: 10px; margin-right: 10px;"><input type="radio" name="member" checked><label>Male</label></div>
+                            <div style="margin-left: 10px; margin-right: 10px;"><input type="radio" name="member" ><label>Female</label></div>
+                        </group>
+                        <textarea id="comment" style="width: 100%;" rows="3" class="form-control" placeholder="Comment" id="message" name="message" required></textarea>
+                        
+                        
+                        <input id="pwd" type="password" placeholder="Enter Password" name="psw" required>
+                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                        <label>
+                            <input type="checkbox" checked="checked" name="accept" style="float: left;"> I accept
+                          </label>
+                          <p>By clicking the checkbox, you agree that the data you entered is fictious</p>
+
+                          <input type="reset" value="Clear">
+                          <input type="submit" value="Sign up" onclick="store()">
+                          
+                        </form>    </div>
+                    
+                    <div class="col">
+                      <div class="hide-md-lg">
+                      </div>
+                      <form id="loginform">
+                        <input id="loginname" type="text" name="email" placeholder="Email" required>
+                        <input id="loginpswd" type="password" name="password" placeholder="Password" required>
+                        <input type="submit" value="Login" onclick="login()">
+                     </form>
+                    </div>
+                    
+                  </div>
+                </form>
+              </div>
+
         </div>
       
         <div class="right">
-          <h2>What?</h2>
-          <p>Cinque Terre comprises five villages: Monterosso, Vernazza, Corniglia, Manarola, and Riomaggiore.</p>
-          <h2>Where?</h2>
-          <p>On the northwest cost of the Italian Riviera, north of the city La Spezia.</p>
-          <h2>Price?</h2>
-          <p>The Walk is free!</p>
+            <h2>What we're about?</h2>
+          <p>This co-ed group is a community of international travelers who are looking to fill their passports and make connections with other travelers while doing so!</p>
+          <p>Join us as we head on adventures to see the world and have meetups to connect with each other.</p>
+          
         </div>
       </div>
       <!--Footer Start-->
@@ -79,6 +125,49 @@
         <div style="text-align:center;padding:10px;margin-top:7px;font-size:15px; color: #fff;"> &copy; Copyright 2020, Infinity Travel</div>
       </div>
       <!--Footer End-->
-      
+      <script>
+          function store(){
+            var email = document.getElementById('email');
+            var url = document.getElementById('url');
+            var dob = document.getElementById('dob');
+            var gender = document.getElementById('gender');
+            var comment = document.getElementById('comment');
+            var pwd = document.getElementById('pwd');
+
+
+            localStorage.setItem('email', email.value);
+            localStorage.setItem('url', url.value);
+            localStorage.setItem('dob', dob.value);
+            localStorage.setItem('gender', gender.value);
+            localStorage.setItem('comment', comment.value);
+            localStorage.setItem('pwd', pwd.value);
+            alert('Registered Successfully!.');
+          }
+
+
+          function login(){
+            var loginemail = document.getElementById('loginname').value;
+            var loginpawd = document.getElementById('loginpswd').value;
+
+            var localhost_email = window.localStorage.getItem('email');
+            var localhost_pswd = window.localStorage.getItem('pwd');
+
+            if((loginemail == localhost_email) && (loginpawd == localhost_pswd ) ){
+                localStorage.setItem('login', 'yes');
+            }
+            else if((loginemail == "admin") && (loginpawd == "admin" )){
+                //alert(window.location.origin+"/mypage.html");
+                document.getElementById("loginform").action = "/mypage.html";
+            }
+            else{
+                alert("Please enter Correct Credentials");
+                //localStorage.setItem('login', 'no');
+            }
+
+
+          }
+        
+        </script>
   </body>
+  
 </html>
