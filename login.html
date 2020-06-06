@@ -87,6 +87,7 @@
                           <input type="reset" value="Clear">
                           <input type="submit" value="Sign up" onclick="store()">
                           
+                          
                         </form>    </div>
                     
                     <div class="col">
@@ -96,6 +97,7 @@
                         <input id="loginname" type="text" name="email" placeholder="Email" required>
                         <input id="loginpswd" type="password" name="password" placeholder="Password" required>
                         <input type="submit" value="Login" onclick="login()">
+                        
                      </form>
                     </div>
                     
@@ -127,6 +129,9 @@
       </div>
       <!--Footer End-->
       <script>
+        function logout(){
+          localStorage.clear()
+        }
           function store(){
             var email = document.getElementById('email');
             var url = document.getElementById('url');
