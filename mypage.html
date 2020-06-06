@@ -77,9 +77,6 @@
                     <td><b>Message</b></td>
                     <td><p id="loc_msg"></p></td>
                 </tr>
-                <tr>
-                    <td><form><input type="submit" value="Logout" name="Logout" onclick="clear()"></form></td>
-                </tr>
             </table>
             
         </div>
@@ -109,9 +106,6 @@
 </html>
 
 <script>
-    function clear(){
-      localStorage.clear()
-    }
 
     var loginstatus = window.localStorage.getItem('login');
 
@@ -129,5 +123,9 @@
         var messagehome = window.localStorage.getItem('message');
         document.getElementById('loc_msg').textContent = messagehome;
 
+    }
+    else{
+        var email = window.localStorage.removeItem('email');
+        document.getElementById('loc_email').textContent = email;
     }
 </script>
